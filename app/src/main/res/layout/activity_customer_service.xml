@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/gradient_green_white"
+        app:title="Customer Service"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/white" />
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <!-- Chat CS -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <LinearLayout android:id="@+id/btnChat"
+                    android:layout_width="match_parent" android:layout_height="80dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:padding="16dp" android:background="@drawable/bg_rounded_white">
+                    <TextView android:layout_width="48dp" android:layout_height="48dp"
+                        android:text="💬" android:textSize="28sp" android:gravity="center"
+                        android:background="@drawable/bg_circle_green" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Live Chat" android:textSize="16sp" android:textStyle="bold"
+                            android:textColor="@color/dark_text" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Tersedia 24/7 · Respon cepat"
+                            android:textSize="12sp" android:textColor="@color/gray_text" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/green_primary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- WhatsApp -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <LinearLayout android:id="@+id/btnWhatsApp"
+                    android:layout_width="match_parent" android:layout_height="80dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:padding="16dp">
+                    <TextView android:layout_width="48dp" android:layout_height="48dp"
+                        android:text="📱" android:textSize="28sp" android:gravity="center"
+                        android:background="@drawable/bg_circle_green" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="WhatsApp" android:textSize="16sp" android:textStyle="bold"
+                            android:textColor="@color/dark_text" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="+62 812-3456-7890" android:textSize="12sp"
+                            android:textColor="@color/gray_text" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/green_primary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Email -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <LinearLayout android:id="@+id/btnEmail"
+                    android:layout_width="match_parent" android:layout_height="80dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:padding="16dp">
+                    <TextView android:layout_width="48dp" android:layout_height="48dp"
+                        android:text="📧" android:textSize="28sp" android:gravity="center"
+                        android:background="@drawable/bg_circle_green" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Email CS" android:textSize="16sp" android:textStyle="bold"
+                            android:textColor="@color/dark_text" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="cs@akeyma.id" android:textSize="12sp"
+                            android:textColor="@color/gray_text" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/green_primary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- FAQ -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="FAQ — Pertanyaan Umum" android:textStyle="bold"
+                android:textColor="@color/green_dark" android:textSize="16sp"
+                android:layout_marginTop="8dp" android:layout_marginBottom="12dp" />
+
+            <!-- FAQ Items -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Bagaimana cara top up?" android:textStyle="bold"
+                        android:textColor="@color/green_dark" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Klik menu Top Up, pilih nominal dan metode pembayaran, lalu konfirmasi."
+                        android:textColor="@color/gray_text" android:textSize="13sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Berapa lama proses transfer?" android:textStyle="bold"
+                        android:textColor="@color/green_dark" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Transfer antar akun AKEYMA bersifat instan. Bank lain 1x24 jam."
+                        android:textColor="@color/gray_text" android:textSize="13sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AKEYMA E-WALLET</string>
+    <string name="app_tagline">Dompet Digital Terpercaya</string>
+    <string name="login">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="phone">Nomor Telepon</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="home">Beranda</string>
+    <string name="topup">Top Up</string>
+    <string name="history">Riwayat</string>
+    <string name="promo">Promo</string>
+    <string name="profile">Profil</string>
+    <string name="balance">Saldo</string>
+    <string name="qris">Bayar QRIS</string>
+    <string name="payment_method">Metode Pembayaran</string>
+    <string name="customer_service">Customer Service</string>
+    <string name="security">Keamanan</string>
+    <string name="search_hint">Cari transaksi, fitur…</string>
+    <string name="no_data">Tidak ada data</string>
+    <string name="success_topup">Top Up Berhasil!</string>
+</resources>

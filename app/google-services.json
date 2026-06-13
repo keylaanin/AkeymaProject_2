@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "273552713368",
+    "firebase_url": "https://akeyma-project-2-ff818-default-rtdb.firebaseio.com",
+    "project_id": "akeyma-project-2-ff818",
+    "storage_bucket": "akeyma-project-2-ff818.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273552713368:android:809357905aa48483c592ed",
+        "android_client_info": {
+          "package_name": "com.akeyma.ewallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFj5n6gsRcg6nGjkqB5RFsJaDCciNKU-s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

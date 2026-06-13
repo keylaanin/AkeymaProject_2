@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Green Palette -->
+    <color name="green_dark">#1B5E20</color>
+    <color name="green_primary">#2E7D32</color>
+    <color name="green_medium">#388E3C</color>
+    <color name="green_light">#4CAF50</color>
+    <color name="green_lighter">#81C784</color>
+    <color name="green_lightest">#C8E6C9</color>
+    <color name="green_surface">#E8F5E9</color>
+
+    <!-- Accent -->
+    <color name="green_accent">#00E676</color>
+    <color name="teal_accent">#00BFA5</color>
+
+    <!-- Neutral -->
+    <color name="white">#FFFFFF</color>
+    <color name="off_white">#F9FBF9</color>
+    <color name="light_gray">#F1F8E9</color>
+    <color name="gray_text">#757575</color>
+    <color name="dark_text">#212121</color>
+
+    <!-- Status -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+
+    <!-- Bottom Nav -->
+    <color name="nav_selected">#2E7D32</color>
+    <color name="nav_unselected">#9E9E9E</color>
+
+    <!-- Card & Background -->
+    <color name="card_bg">#FFFFFF</color>
+    <color name="page_bg">#F1F8E9</color>
+    <color name="statusBar">#1B5E20</color>
+</resources>

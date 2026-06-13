@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment"
+        android:name="com.akeyma.ewallet.fragment.HomeFragment"
+        android:label="Beranda" />
+    <fragment android:id="@+id/topUpFragment"
+        android:name="com.akeyma.ewallet.fragment.TopUpFragment"
+        android:label="Top Up" />
+    <fragment android:id="@+id/transactionFragment"
+        android:name="com.akeyma.ewallet.fragment.TransactionFragment"
+        android:label="Riwayat" />
+    <fragment android:id="@+id/promoFragment"
+        android:name="com.akeyma.ewallet.fragment.PromoFragment"
+        android:label="Promo" />
+    <fragment android:id="@+id/profileFragment"
+        android:name="com.akeyma.ewallet.fragment.ProfileFragment"
+        android:label="Profil" />
+</navigation>

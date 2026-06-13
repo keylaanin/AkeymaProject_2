@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@drawable/gradient_header">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Top Up Saldo"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <!-- Nominal Input -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Masukkan Nominal" android:textStyle="bold"
+                        android:textColor="@color/green_dark" android:textSize="15sp"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAmount"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Nominal Top Up"
+                        app:boxStrokeColor="@color/green_primary"
+                        app:prefixText="Rp ">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAmount"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" android:textSize="20sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pilihan Nominal Cepat -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Pilihan Nominal" android:textStyle="bold"
+                android:textColor="@color/green_dark" android:layout_marginBottom="12dp" />
+
+            <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:columnCount="3" android:layout_marginBottom="16dp">
+
+                <!-- Nominal chips -->
+                <com.google.android.material.chip.Chip android:id="@+id/chip10k"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" android:layout_margin="4dp"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="Rp 10.000" app:chipBackgroundColor="@color/green_surface"
+                    app:chipStrokeColor="@color/green_primary" app:chipStrokeWidth="1dp" />
+                <com.google.android.material.chip.Chip android:id="@+id/chip20k"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" android:layout_margin="4dp"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="Rp 20.000" app:chipBackgroundColor="@color/green_surface"
+                    app:chipStrokeColor="@color/green_primary" app:chipStrokeWidth="1dp" />
+                <com.google.android.material.chip.Chip android:id="@+id/chip50k"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" android:layout_margin="4dp"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="Rp 50.000" app:chipBackgroundColor="@color/green_surface"
+                    app:chipStrokeColor="@color/green_primary" app:chipStrokeWidth="1dp" />
+                <com.google.android.material.chip.Chip android:id="@+id/chip100k"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" android:layout_margin="4dp"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="Rp 100.000" app:chipBackgroundColor="@color/green_surface"
+                    app:chipStrokeColor="@color/green_primary" app:chipStrokeWidth="1dp" />
+                <com.google.android.material.chip.Chip android:id="@+id/chip200k"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" android:layout_margin="4dp"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="Rp 200.000" app:chipBackgroundColor="@color/green_surface"
+                    app:chipStrokeColor="@color/green_primary" app:chipStrokeWidth="1dp" />
+                <com.google.android.material.chip.Chip android:id="@+id/chip500k"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" android:layout_margin="4dp"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="Rp 500.000" app:chipBackgroundColor="@color/green_surface"
+                    app:chipStrokeColor="@color/green_primary" app:chipStrokeWidth="1dp" />
+            </GridLayout>
+
+            <!-- Metode Pembayaran -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Metode Pembayaran" android:textStyle="bold"
+                        android:textColor="@color/green_dark" android:layout_marginBottom="12dp" />
+
+                    <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbBankTransfer"
+                            android:layout_width="match_parent" android:layout_height="48dp"
+                            android:text="🏦  Transfer Bank" android:buttonTint="@color/green_primary" />
+                        <RadioButton android:id="@+id/rbQris"
+                            android:layout_width="match_parent" android:layout_height="48dp"
+                            android:text="📱  QRIS" android:buttonTint="@color/green_primary" />
+                        <RadioButton android:id="@+id/rbIndomaret"
+                            android:layout_width="match_parent" android:layout_height="48dp"
+                            android:text="🏪  Indomaret/Alfamart" android:buttonTint="@color/green_primary" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTopUp"
+                style="@style/GreenButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="TOP UP SEKARANG" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
