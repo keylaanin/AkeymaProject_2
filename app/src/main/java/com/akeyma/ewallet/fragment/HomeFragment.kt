@@ -15,6 +15,7 @@ import com.akeyma.ewallet.adapter.TransactionAdapter
 import com.akeyma.ewallet.databinding.FragmentHomeBinding
 import com.akeyma.ewallet.model.Transaction
 import com.akeyma.ewallet.utils.SessionManager
+import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -26,6 +27,8 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var sessionManager: SessionManager
+    private var balanceListener: ListenerRegistration? = null
+    private var transactionListener: ListenerRegistration? = null
     private var isBalanceVisible = true
     private var currentBalanceText = "Rp 0"
 
@@ -98,43 +101,43 @@ class HomeFragment : Fragment() {
         binding.btnSearch.setOnClickListener {
             startActivity(Intent(requireContext(), SearchActivity::class.java))
         }
-
-        binding.btnSearch.setOnClickListener {
-            findNavController().navigate(R.id.transactionFragment)
-        }
     }
 
     private fun listenToUserBalance() {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
-        if (userId != null) {
-            val db = FirebaseFirestore.getInstance()
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
 
-            db.collection("users").document(userId)
+        balanceListener =
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(userId)
                 .addSnapshotListener { snapshot, error ->
-                    if (error != null) {
-                        return@addSnapshotListener
-                    }
 
-                    if (snapshot != null && snapshot.exists()) {
-                        val currentBalance = snapshot.getLong("balance") ?: 0L
+                if (_binding == null) return@addSnapshotListener
+                if (!isAdded) return@addSnapshotListener
+                if (error != null) return@addSnapshotListener
 
-                        updateBalanceUI(currentBalance)
-                        sessionManager.updateBalance(currentBalance.toString())
-                    }
-                }
-        }
+                val currentBalance =
+                    snapshot?.getLong("balance") ?: 0L
+
+                updateBalanceUI(currentBalance)
+                sessionManager.updateBalance(currentBalance.toString())
+            }
     }
 
     private fun fetchRecentTransactions() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("topup_transactions")
-            .whereEqualTo("user_id", userId)
-            .orderBy("timestamp", Query.Direction.DESCENDING)
-            .limit(5)
-            .addSnapshotListener { snapshots, error ->
-                if (error != null) return@addSnapshotListener
+        transactionListener =
+            db.collection("topup_transactions")
+                .whereEqualTo("user_id", userId)
+                .orderBy("timestamp", Query.Direction.DESCENDING)
+                .limit(5)
+                .addSnapshotListener { snapshots, error ->
+
+                    if (_binding == null) return@addSnapshotListener
+                    if (!isAdded) return@addSnapshotListener
+                    if (error != null) return@addSnapshotListener
 
                 if (snapshots != null) {
                     val recentList = mutableListOf<Transaction>()
@@ -180,7 +183,11 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
+
+        balanceListener?.remove()
+        transactionListener?.remove()
+
         _binding = null
+        super.onDestroyView()
     }
 }

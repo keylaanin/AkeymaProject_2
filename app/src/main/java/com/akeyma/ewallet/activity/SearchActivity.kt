@@ -98,24 +98,25 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun filterTransactions() {
-        val q = binding.etSearch.text.toString().lowercase()
-        if (q.isEmpty()) {
+        val keyword = binding.etSearch.text.toString()
+            .trim()
+            .lowercase()
+
+        if (keyword.isEmpty()) {
             showResults(allTransactions)
             return
         }
+
         val filtered = allTransactions.filter { transaction ->
-            transaction.title.lowercase().contains(q) ||
-            transaction.amount.toString().contains(q) ||
-            transaction.date.lowercase().contains(q)
+            transaction.title.lowercase().contains(keyword) ||
+                    transaction.date.lowercase().contains(keyword) ||
+                    transaction.amount.toString().contains(keyword)
         }
-        val sortedFiltered = filtered.sortedByDescending { it.date }
-        showResults(sortedFiltered)
+
+        showResults(filtered)
     }
 
     private fun showResults(list: List<Transaction>) {
-        val adapter = binding.rvSearchResults.adapter as? TransactionAdapter
-        if (adapter == null) {
-            binding.rvSearchResults.adapter = TransactionAdapter(list)
-        }
+        binding.rvSearchResults.adapter = TransactionAdapter(list)
     }
 }
